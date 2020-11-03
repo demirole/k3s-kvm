@@ -1,0 +1,7 @@
+k3s_version: v1.19.3+k3s2
+ansible_python_interpreter: /usr/bin/python3
+ansible_user: kube
+ansible_ssh_pass: kubernetes
+ansible_connection: paramiko
+systemd_dir: /etc/systemd/system
+master_ip: "{{ hostvars[groups['k3s-master'][0]]['ansible_host'] | default(groups['k3s-master'][0]) }}"
